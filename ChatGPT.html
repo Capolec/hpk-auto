@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HPK Auto Praha 10 | Autoservis, Pneuservis, Autoklempířství</title>
+
+    <meta name="description" content="HPK Auto Praha 10 – autoservis, autoklempířství, pneuservis, odtahy vozidel a servis amerických vozů. Práčská 1881/14, Praha 10.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #08090b;
+            --bg-light: #101216;
+            --card: #13161b;
+            --card-hover: #181c22;
+            --red: #e52b2f;
+            --red-dark: #b91f23;
+            --white: #ffffff;
+            --text: #f3f4f6;
+            --muted: #9da3ad;
+            --border: rgba(255,255,255,0.09);
+            --green: #35c979;
+            --max: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(100% - 40px, var(--max));
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8,9,11,0.86);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-family: "Manrope", sans-serif;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+        }
+
+        .logo-mark {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            background: var(--red);
+            border-radius: 9px;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c8ccd3;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-call {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 17px;
+            background: var(--red);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .nav-call:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 760px;
+            padding-top: 76px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 75% 40%, rgba(229,43,47,0.16), transparent 35%),
+                radial-gradient(circle at 20% 100%, rgba(229,43,47,0.07), transparent 30%),
+                var(--bg);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            right: -250px;
+            top: 100px;
+            border-radius: 50%;
+            border: 1px solid rgba(229,43,47,0.13);
+            box-shadow:
+                0 0 0 60px rgba(229,43,47,0.025),
+                0 0 0 120px rgba(229,43,47,0.018);
+        }
+
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border: 1px solid rgba(229,43,47,0.28);
+            background: rgba(229,43,47,0.08);
+            color: #ff686b;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(53,201,121,0.7);
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(48px, 7vw, 84px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 27px;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .hero-description {
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.75;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 51px;
+            padding: 0 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.07);
+        }
+
+        .hero-bottom {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        .hero-info {
+            display: flex;
+            gap: 30px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-info-item strong {
+            color: white;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 105px 0;
+        }
+
+        .section-label {
+            color: var(--red);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(34px, 5vw, 53px);
+            letter-spacing: -2px;
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        #sluzby {
+            background: #0c0e11;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            align-items: end;
+            margin-bottom: 45px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .service-card {
+            padding: 28px;
+            min-height: 280px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229,43,47,0.35);
+            background: var(--card-hover);
+        }
+
+        .service-number {
+            position: absolute;
+            right: 22px;
+            top: 17px;
+            font-family: "Manrope", sans-serif;
+            color: rgba(255,255,255,0.05);
+            font-size: 64px;
+            font-weight: 800;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: rgba(229,43,47,0.1);
+            color: var(--red);
+            font-size: 23px;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 22px;
+            margin-bottom: 13px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            margin-top: 17px;
+            list-style: none;
+        }
+
+        .service-card li {
+            color: #c7cbd2;
+            font-size: 13px;
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 800;
+        }
+
+        /* =========================
+           AMERICAN CARS
+        ========================= */
+
+        .american {
+            background:
+                linear-gradient(90deg, rgba(8,9,11,0.98), rgba(8,9,11,0.82)),
+                radial-gradient(circle at 80% 40%, rgba(229,43,47,0.2), transparent 45%);
+        }
+
+        .american-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .american-copy p {
+            color: var(--muted);
+            margin: 20px 0 27px;
+            max-width: 570px;
+            line-height: 1.8;
+        }
+
+        .brands {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.035);
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .american-box {
+            min-height: 340px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background:
+                linear-gradient(135deg, rgba(229,43,47,0.12), transparent 60%),
+                var(--card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .american-box::before {
+            content: "V8";
+            font-family: "Manrope", sans-serif;
+            font-size: 220px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.025);
+        }
+
+        .american-badge {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(8,9,11,0.78);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            font-size: 13px;
+            color: #c9ccd2;
+        }
+
+        /* =========================
+           TOWING
+        ========================= */
+
+        .towing {
+            background: #0c0e11;
+        }
+
+        .towing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .towing-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            padding: 21px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Manrope", sans-serif;
+            font-size: 26px;
+            margin-bottom: 4px;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .towing-box {
+            padding: 42px;
+            border-radius: 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .towing-box h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 28px;
+            margin-bottom: 17px;
+        }
+
+        .towing-box p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* =========================
+           PNEU
+        ========================= */
+
+        .pneu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px;
+            margin-top: 45px;
+        }
+
+        .pneu-item {
+            padding: 25px 20px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .pneu-item:hover {
+            border-color: rgba(229,43,47,0.35);
+            transform: translateY(-3px);
+        }
+
+        .pneu-icon {
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+        .pneu-item strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PRICING
+        ========================= */
+
+        #cenik {
+            background: #0c0e11;
+        }
+
+        .price-card {
+            margin-top: 40px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            overflow: hidden;
+            background: var(--card);
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 30px;
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-row:last-child {
+            border-bottom: 0;
+        }
+
+        .price-name {
+            font-weight: 600;
+        }
+
+        .price-sub {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .price {
+            text-align: right;
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+            white-space: nowrap;
+        }
+
+        .price small {
+            display: block;
+            font-family: "Inter", sans-serif;
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 400;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 45px;
+        }
+
+        .contact-card {
+            padding: 30px;
+            border-radius: 13px;
+            border: 1px solid var(--border);
+            background: var(--card);
+        }
+
+        .contact-card h3 {
+            font-family: "Manrope", sans-serif;
+            margin-bottom: 22px;
+            font-size: 20px;
+        }
+
+        .contact-line {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: rgba(229,43,47,0.1);
+            color: var(--red);
+            font-size: 15px;
+        }
+
+        .contact-line small {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+
+        .contact-line a,
+        .contact-line strong {
+            font-size: 14px;
+        }
+
+        .map-box {
+            min-height: 100%;
+            border-radius: 13px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #15181d;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .map-pin {
+            font-size: 42px;
+            margin-bottom: 14px;
+        }
+
+        .map-box h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .map-box p {
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 350px;
+            margin-bottom: 22px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 75px 0;
+            background:
+                linear-gradient(100deg, rgba(229,43,47,0.95), rgba(177,25,29,0.95));
+        }
+
+        .cta-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,0.78);
+            font-size: 14px;
+        }
+
+        .btn-white {
+            background: white;
+            color: #111;
+            white-space: nowrap;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            background: #f3f3f3;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 0;
+            background: #060709;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-copy {
+            color: #707680;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            color: #8d929b;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* =========================
+           MOBILE CALL BAR
+        ========================= */
+
+        .mobile-call {
+            display: none;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links,
+            .nav-call {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                min-height: 700px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2.5px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .american-inner,
+            .towing-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .american-box {
+                min-height: 250px;
+            }
+
+            .pneu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 28px, var(--max));
+            }
+
+            header {
+                position: fixed;
+            }
+
+            .nav {
+                height: 67px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .logo-mark {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 680px;
+                padding-top: 67px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: -2.5px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+                line-height: 1.65;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .hero-info {
+                flex-wrap: wrap;
+                gap: 12px 20px;
+                font-size: 11px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-head {
+                display: block;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: auto;
+            }
+
+            .towing-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .towing-box {
+                padding: 27px;
+            }
+
+            .pneu-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .price-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 21px;
+            }
+
+            .price {
+                text-align: left;
+            }
+
+            .contact-grid {
+                margin-top: 30px;
+            }
+
+            .contact-card {
+                padding: 23px;
+            }
+
+            .map-box {
+                min-height: 300px;
+            }
+
+            .cta {
+                padding: 55px 0;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .mobile-call {
+                display: flex;
+                position: fixed;
+                left: 12px;
+                right: 12px;
+                bottom: 12px;
+                z-index: 999;
+                background: var(--red);
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            }
+
+            .mobile-call a {
+                width: 100%;
+                min-height: 52px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 9px;
+                font-weight: 800;
+                font-size: 14px;
+            }
+
+            footer {
+                padding-bottom: 85px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+    <div class="container nav">
+
+        <a href="#domu" class="logo">
+            <div class="logo-mark">HPK</div>
+            AUTO<span>.</span>
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#sluzby">Služby</a></li>
+                <li><a href="#americke-vozy">Americké vozy</a></li>
+                <li><a href="#odtahy">Odtahy</a></li>
+                <li><a href="#cenik">Ceník</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <a class="nav-call" href="tel:+420245019909">
+            ☎ Zavolat do dílny
+        </a>
+
+        <button class="mobile-menu" onclick="toggleMenu()" aria-label="Menu">
+            ☰
+        </button>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="domu">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Autoservis Praha 10
+            </div>
+
+            <h1>
+                Váš vůz.<br>
+                Naše <span>práce.</span>
+            </h1>
+
+            <p class="hero-description">
+                Kompletní servis vozidel, autoklempířství, pneuservis,
+                odtahy a zkušenosti s americkými vozy.
+                HPK Auto najdete v Praze 10 – Záběhlicích.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="tel:+420245019909" class="btn btn-primary">
+                    ☎ Zavolat do dílny
+                </a>
+
+                <a href="#sluzby" class="btn btn-secondary">
+                    Prohlédnout služby →
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-bottom">
+        <div class="container">
+
+            <div class="hero-info">
+
+                <div class="hero-info-item">
+                    ● <strong>Dle dohody</strong> otevírací doba
+                </div>
+
+                <div class="hero-info-item">
+                    ● Praha 10 – Záběhlice
+                </div>
+
+                <div class="hero-info-item">
+                    ● Odtahy ČR i zahraničí
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="sluzby">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <div class="section-label">Co děláme</div>
+
+                <h2 class="section-title">
+                    Servis, který<br>
+                    řeší vaše auto.
+                </h2>
+            </div>
+
+            <p class="section-description">
+                Od pravidelné údržby přes opravy po nehodách
+                až po pneuservis a odtahy. Na jednom místě.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <div class="service-number">01</div>
+
+                <div class="service-icon">⚙</div>
+
+                <h3>Autoservis</h3>
+
+                <p>
+                    Pravidelná údržba i rozsáhlejší jednorázové opravy vozidel.
+                </p>
+
+                <ul>
+                    <li>Servisní prohlídky</li>
+                    <li>Výměna provozních kapalin</li>
+                    <li>Příprava na STK</li>
+                    <li>Defend Lock</li>
+                    <li>Duralové kryty podvozku Defend</li>
+                </ul>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">02</div>
+
+                <div class="service-icon">✦</div>
+
+                <h3>Autoklempířství</h3>
+
+                <p>
+                    Kompletní opravy karoserie po nehodách a poškození vozidla.
+                </p>
+
+                <ul>
+                    <li>Rovnání karosérie</li>
+                    <li>Výměna částí karosérie</li>
+                    <li>Airbagy a řídící jednotky</li>
+                    <li>Bezpečnostní pásy</li>
+                    <li>Oprava interiéru</li>
+                    <li>Zajištění lakování</li>
+                    <li>Vyřízení pojistné události</li>
+                </ul>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">03</div>
+
+                <div class="service-icon">◉</div>
+
+                <h3>Pneuservis</h3>
+
+                <p>
+                    Pneuservis pro osobní automobily.
+                </p>
+
+                <ul>
+                    <li>Oprava defektů</li>
+                    <li>Obouvání nových plášťů</li>
+                    <li>Vyvažování</li>
+                    <li>Přezouvání pneu</li>
+                </ul>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">04</div>
+
+                <div class="service-icon">▰</div>
+
+                <h3>Odtahy vozidel</h3>
+
+                <p>
+                    Plošinový autovlek pro vozidla do 2,7 tuny.
+                </p>
+
+                <ul>
+                    <li>Odtahy po celé ČR</li>
+                    <li>Odtahy do zahraničí</li>
+                    <li>Ložná plocha 4 × 2 m</li>
+                    <li>Objednání předem telefonicky</li>
+                </ul>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">05</div>
+
+                <div class="service-icon">V8</div>
+
+                <h3>Americké vozy</h3>
+
+                <p>
+                    Dlouholeté zkušenosti se servisem a opravami amerických vozů.
+                </p>
+
+                <ul>
+                    <li>Jeep</li>
+                    <li>Chrysler</li>
+                    <li>Další americké vozy</li>
+                </ul>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-number">06</div>
+
+                <div class="service-icon">₵</div>
+
+                <h3>Ceník</h3>
+
+                <p>
+                    Transparentní základní ceny mechanických a klempířských prací.
+                </p>
+
+                <ul>
+                    <li>Mechanické práce 400 Kč/h bez DPH</li>
+                    <li>Klempířské práce 400 Kč/h bez DPH</li>
+                    <li>Odtah od 10 Kč/km bez DPH</li>
+                </ul>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AMERICAN CARS
+========================= -->
+
+<section class="american" id="americke-vozy">
+
+    <div class="container american-inner">
+
+        <div class="american-copy">
+
+            <div class="section-label">Specializace</div>
+
+            <h2 class="section-title">
+                Americké vozy<br>
+                nás baví.
+            </h2>
+
+            <p>
+                Máme dlouholetou zkušenost s opravami a servisem
+                amerických automobilů. Pokud vlastníte Jeep, Chrysler
+                nebo jiný americký vůz, obraťte se na nás.
+            </p>
+
+            <div class="brands">
+                <div class="brand">JEEP</div>
+                <div class="brand">CHRYSLER</div>
+                <div class="brand">AMERICAN CARS</div>
+            </div>
+
+        </div>
+
+        <div class="american-box">
+
+            <div class="american-badge">
+                <strong>Servis amerických vozů</strong><br>
+                Zkušenosti s vozy Jeep, Chrysler a dalšími značkami.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TOWING
+========================= -->
+
+<section class="towing" id="odtahy">
+
+    <div class="container towing-grid">
+
+        <div>
+
+            <div class="section-label">Když auto nejede</div>
+
+            <h2 class="section-title">
+                Odtah bez<br>
+                zbytečných starostí.
+            </h2>
+
+            <p class="section-description">
+                Odtahy realizujeme pomocí plošinového autovleku.
+                Jezdíme po celé České republice i do zahraničí.
+                Odtah je nutné předem telefonicky objednat.
+            </p>
+
+            <div class="towing-stats">
+
+                <div class="stat">
+                    <strong>2,7 t</strong>
+                    <span>maximální nosnost</span>
+                </div>
+
+                <div class="stat">
+                    <strong>4 × 2 m</strong>
+                    <span>rozměr plošiny</span>
+                </div>
+
+                <div class="stat">
+                    <strong>ČR</strong>
+                    <span>odtahy po republice</span>
+                </div>
+
+                <div class="stat">
+                    <strong>ZAHRANIČÍ</strong>
+                    <span>odtahy mimo ČR</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="towing-box">
+
+            <h3>Potřebujete odtah?</h3>
+
+            <p>
+                Zavolejte nám a domluvte si odtah předem.
+                Pro konkrétní cenu a dostupnost nás kontaktujte telefonicky.
+            </p>
+
+            <a href="tel:+420245019909" class="btn btn-primary">
+                ☎ 245 019 909
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PNEUSERVIS
+========================= -->
+
+<section id="pneuservis">
+
+    <div class="container">
+
+        <div class="section-label">Pneumatiky</div>
+
+        <h2 class="section-title">
+            Pneuservis
+        </h2>
+
+        <p class="section-description">
+            Postaráme se o vaše pneumatiky od defektu až po kompletní přezutí.
+        </p>
+
+        <div class="pneu-grid">
+
+            <div class="pneu-item">
+                <div class="pneu-icon">◉</div>
+                <strong>Oprava defektů</strong>
+            </div>
+
+            <div class="pneu-item">
+                <div class="pneu-icon">◌</div>
+                <strong>Obouvání plášťů</strong>
+            </div>
+
+            <div class="pneu-item">
+                <div class="pneu-icon">◎</div>
+                <strong>Vyvažování</strong>
+            </div>
+
+            <div class="pneu-item">
+                <div class="pneu-icon">↻</div>
+                <strong>Přezouvání pneu</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+
+<section id="cenik">
+
+    <div class="container">
+
+        <div class="section-label">Transparentní ceny</div>
+
+        <h2 class="section-title">
+            Ceník
+        </h2>
+
+        <p class="section-description">
+            Základní sazby za nejčastější práce. Pro konkrétní
+            opravu nás kontaktujte.
+        </p>
+
+
+        <div class="price-card">
+
+            <div class="price-row">
+
+                <div>
+                    <div class="price-name">
+                        Mechanické práce
+                    </div>
+                    <div class="price-sub">
+                        Hodinová sazba
+                    </div>
+                </div>
+
+                <div class="price">
+                    400 Kč / hod
+                    <small>484 Kč s DPH</small>
+                </div>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <div>
+                    <div class="price-name">
+                        Klempířské práce
+                    </div>
+                    <div class="price-sub">
+                        Hodinová sazba
+                    </div>
+                </div>
+
+                <div class="price">
+                    400 Kč / hod
+                    <small>484 Kč s DPH</small>
+                </div>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <div>
+                    <div class="price-name">
+                        Odtah vozidel
+                    </div>
+                    <div class="price-sub">
+                        Cena dle vzdálenosti
+                    </div>
+                </div>
+
+                <div class="price">
+                    od 10 Kč / km
+                    <small>12,1 Kč / km s DPH</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="kontakt">
+
+    <div class="container">
+
+        <div class="section-label">Kde nás najdete</div>
+
+        <h2 class="section-title">
+            Kontaktujte HPK Auto
+        </h2>
+
+        <p class="section-description">
+            Zavolejte nám nebo si předem domluvte návštěvu dílny v Praze 10.
+            Otevírací doba je dle dohody.
+        </p>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3>Kontaktní údaje</h3>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">☎</div>
+
+                    <div>
+                        <small>Dílna</small>
+                        <a href="tel:+420245019909">
+                            <strong>245 019 909</strong>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">☎</div>
+
+                    <div>
+                        <small>Jaroslav Petr</small>
+                        <a href="tel:+420777308007">
+                            <strong>777 308 007</strong>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">☎</div>
+
+                    <div>
+                        <small>Martin Hasal</small>
+                        <a href="tel:+420602809683">
+                            <strong>602 809 683</strong>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">☎</div>
+
+                    <div>
+                        <small>Martin Kraml</small>
+                        <a href="tel:+420608519741">
+                            <strong>608 519 741</strong>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">✉</div>
+
+                    <div>
+                        <small>E-mail</small>
+                        <a href="mailto:hpkauto@seznam.cz">
+                            <strong>hpkauto@seznam.cz</strong>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">⌖</div>
+
+                    <div>
+                        <small>Adresa</small>
+                        <strong>
+                            Práčská 1881/14<br>
+                            Praha 10 – Záběhlice<br>
+                            PSČ 106 00
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">◷</div>
+
+                    <div>
+                        <small>Otevírací doba</small>
+                        <strong>Dle dohody</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-box">
+
+                <div class="map-pin">⌖</div>
+
+                <h3>Praha 10 – Záběhlice</h3>
+
+                <p>
+                    Práčská 1881/14, 106 00 Praha 10
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=50.052887,14.508495"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-primary"
+                >
+                    Otevřít trasu v Mapách →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container cta-inner">
+
+        <div>
+            <h2>Potřebujete servis?</h2>
+
+            <p>
+                Zavolejte do dílny a domluvte si termín.
+            </p>
+        </div>
+
+        <a href="tel:+420245019909" class="btn btn-white">
+            ☎ 245 019 909
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div class="footer-copy">
+            © <span id="year"></span> HPK Auto Praha 10. Všechna práva vyhrazena.
+        </div>
+
+        <div class="footer-links">
+            <a href="#sluzby">Služby</a>
+            <a href="#cenik">Ceník</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     MOBILE CALL
+========================= -->
+
+<div class="mobile-call">
+
+    <a href="tel:+420245019909">
+        ☎ Zavolat do dílny · 245 019 909
+    </a>
+
+</div>
+
+
+<script>
+
+    /* Aktuální rok */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+
+    /* Jednoduché mobilní menu */
+    function toggleMenu() {
+
+        const links = document.querySelector(".nav-links");
+
+        if (links.style.display === "flex") {
+
+            links.style.display = "none";
+
+        } else {
+
+            links.style.display = "flex";
+
+            links.style.position = "absolute";
+            links.style.top = "67px";
+            links.style.left = "0";
+            links.style.right = "0";
+            links.style.padding = "20px";
+            links.style.flexDirection = "column";
+            links.style.alignItems = "flex-start";
+            links.style.background = "#08090b";
+            links.style.borderBottom = "1px solid rgba(255,255,255,0.09)";
+
+        }
+
+    }
+
+
+    /* Zavření mobilního menu po kliknutí */
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            if (window.innerWidth <= 900) {
+
+                document.querySelector(".nav-links").style.display = "none";
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
